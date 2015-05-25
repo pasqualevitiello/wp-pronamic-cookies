@@ -592,7 +592,7 @@
                     </header>
                     <hr>
                     <div class="theme-description">
-                        <p class="theme-description"><?php echo $text;?></p>
+                        <p><?php echo $text;?></p>
                     </div>
                     <footer>
                         <div class="row">

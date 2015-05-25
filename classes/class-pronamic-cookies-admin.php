@@ -29,8 +29,8 @@ class Pronamic_Cookies_Admin {
 
 	public function load_defaults() {
 
-		if ( get_option( 'pronamic_cookie_blocker_demo_text' ) === false ) {
-		    update_option( 'pronamic_cookie_blocker_demo_text', __( 'Live Demo', 'pronamic-cookies' ) );
+		if ( get_option( 'pronamic_cookie_blocker_demo_demo_text' ) === false ) {
+		    update_option( 'pronamic_cookie_blocker_demo_demo_text', __( 'Live Demo', 'pronamic-cookies' ) );
 		}
 
 		if ( get_option( 'pronamic_cookie_blocker_demo_buy_text' ) === false ) {
@@ -183,21 +183,21 @@ class Pronamic_Cookies_Admin {
 		);
 
 		add_settings_field(
-			'pronamic_cookie_blocker_demo_text',
+			'pronamic_cookie_blocker_demo_demo_text',
 			__( 'Demo button text', 'pronamic-cookies' ),
 			array( $this, 'text' ),
 			'pronamic_cookie_options_page',
 			'pronamic_cookie_blocker_options',
-			array( 'label_for' => 'pronamic_cookie_blocker_demo_text' )
+			array( 'label_for' => 'pronamic_cookie_blocker_demo_demo_text' )
 		);
 
 		add_settings_field(
-			'pronamic_cookie_blocker_demo_link',
+			'pronamic_cookie_blocker_demo_demo_link',
 			__( 'Demo button link', 'pronamic-cookies' ),
 			array( $this, 'text' ),
 			'pronamic_cookie_options_page',
 			'pronamic_cookie_blocker_options',
-			array( 'label_for' => 'pronamic_cookie_blocker_demo_link' )
+			array( 'label_for' => 'pronamic_cookie_blocker_demo_demo_link' )
 		);
 
 		add_settings_field(
