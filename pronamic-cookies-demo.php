@@ -1,21 +1,21 @@
 <?php
 /*
-Plugin Name: Pronamic Cookies
-Plugin URI: http://pronamic.eu/wordpress-plugins/pronamic-cookies/
-Description: Handy solutions to the new Cookie Law. Full site blocker or just a bar. You can also block specific sections of a page.
+Plugin Name: Pronamic Cookies for Demo Themes
+Plugin URI: https://github.com/pasqualevitiello/wp-pronamic-cookies
+Description: Handy solutions to the new Cookie Law. Full site blocker for demo themes.
 
-Version: 0.3.1
+Version: 0.3.1 (Forked)
 Requires at least: 3.2
 
-Author: Pronamic
-Author URI: http://pronamic.eu/
+Author: Pasquale Vitiello, Pronamic fork
+Author URI: https://github.com/pasqualevitiello
 
-Text Domain: pronamic-cookies
+Text Domain: pronamic-cookies-demo
 Domain Path: /lang/
 
 License: GPL
 
-GitHub URI: https://github.com/pronamic/wp-pronamic-cookies
+GitHub URI: https://github.com/pasqualevitiello/wp-pronamic-cookies
 */
 
 define( 'PRONAMIC_CL_FILE',       __FILE__ );
@@ -69,9 +69,6 @@ function pronamic_cookie_view( $name, $vars = array(), $return = false ) {
  *
  * ===========
  */
-
-include PRONAMIC_CL_BASE . '/includes/functions.php';
-include PRONAMIC_CL_BASE . '/includes/deprecated.php';
 
 $pronamic_cookie = new Pronamic_Cookies();
 

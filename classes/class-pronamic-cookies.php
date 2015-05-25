@@ -12,23 +12,13 @@ class Pronamic_Cookies {
 
 	public function __construct() {
 		add_action( 'init', array( $this, 'init' ) );
-
-		add_action( 'wp_enqueue_scripts', array( $this, 'styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
-
 		add_action( 'template_redirect', array( $this, 'blocker' ) );
-
-		add_action( 'wp_footer', array( $this, 'show_message' ) );
 
 	}
 
 	public function init() {
 		load_plugin_textdomain( 'pronamic-cookies', false, PRONAMIC_CL_PLUGIN_DIR . '/languages/' );
-	}
-
-	public function styles() {
-		wp_register_style( 'pronamic_cookie_style', plugins_url( PRONAMIC_CL_PLUGIN_DIR . '/assets/pronamic-cookie-law-style.css' ) );
-		wp_enqueue_style( 'pronamic_cookie_style' );
 	}
 
 	public function scripts() {
@@ -55,35 +45,29 @@ class Pronamic_Cookies {
 		) );
 	}
 
-	public function show_message() {
-		$viewed = filter_input( INPUT_COOKIE, 'pcl_viewed', FILTER_VALIDATE_BOOLEAN );
-
-		$bar_active = get_option( 'pronamic_cookie_base_active' );
-
-		if (  ! $viewed && $bar_active == 1 ) {
-			pronamic_cookie_view( 'views/message', array(
-				'position' => get_option( 'pronamic_cookie_location' ),
-				'message'  => get_option( 'pronamic_cookie_text ' ),
-				'link'     => get_option( 'pronamic_cookie_link' )
-			) );
-		}
-	}
-
 	public function blocker() {
-		$blocker_active = get_option( 'pronamic_cookie_blocker_active' );
+		$blocker_active = get_option( 'pronamic_cookie_blocker_demo_active' );
 
-		if ( $blocker_active == 1 && ! $this->is_a_spider() && ! isset( $_COOKIE['pcl_viewed'] ) ) {
+		if ( $blocker_active == 1 && ! $this->is_a_spider() && ! isset( $_COOKIE['cookie_notice_accepted'] ) ) {
 			// intercept!
 			pronamic_cookie_view( 'views/blocker', array(
 				'javascript_url'       => plugins_url( 'assets/pronamic-cookie-law.js', PRONAMIC_CL_FILE ),
-				'title'                => get_option( 'pronamic_cookie_blocker_title' ),
-				'text'                 => get_option( 'pronamic_cookie_blocker_text' ),
-				'image'                => get_option( 'pronamic_cookie_blocker_image' ),
-				'color'                => get_option( 'pronamic_cookie_blocker_bgcolor' ),
-				'cookie_law_link_show' => get_option( 'pronamic_cookie_blocker_show_link' ),
-				'cookie_law_link'      => get_option( 'pronamic_cookie_link' ),
-				'accept_button_text'   => __( 'Accept', 'pronamic-cookies' ),
-				'law_link_text'        => __( 'Read more about the cookies on this site here', 'pronamic-cookies' ),
+				'img_logo'             => get_option( 'pronamic_cookie_blocker_demo_img_logo' ),
+				'svg_logo'             => get_option( 'pronamic_cookie_blocker_demo_svg_logo' ),
+				'logo_link'            => get_option( 'pronamic_cookie_blocker_demo_logo_link' ),
+				'title'                => get_option( 'pronamic_cookie_blocker_demo_title' ),
+				'subtitle'             => get_option( 'pronamic_cookie_blocker_demo_subtitle' ),
+				'image'                => get_option( 'pronamic_cookie_blocker_demo_image' ),
+				'text'                 => get_option( 'pronamic_cookie_blocker_demo_text' ),
+				'demo_text'            => get_option( 'pronamic_cookie_blocker_demo_text' ),
+				'demo_link'            => get_option( 'pronamic_cookie_blocker_demo_link' ),
+				'buy_text'             => get_option( 'pronamic_cookie_blocker_demo_buy_text' ),
+				'buy_link'             => get_option( 'pronamic_cookie_blocker_demo_buy_link' ),
+				'banner_color'         => get_option( 'pronamic_cookie_blocker_demo_banner_color' ),
+				'banner_text'          => get_option( 'pronamic_cookie_blocker_demo_banner_text' ),	
+				'ok_text'              => get_option( 'pronamic_cookie_blocker_demo_ok_text' ),
+				'policy_text'          => get_option( 'pronamic_cookie_blocker_demo_policy_text' ),
+				'policy_link'          => get_option( 'pronamic_cookie_blocker_demo_policy_link' ),		
 			) );
 
 			exit;
