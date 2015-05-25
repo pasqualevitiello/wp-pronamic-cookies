@@ -271,8 +271,8 @@ class Pronamic_Cookies_Admin {
 		register_setting( 'pronamic_cookie_options', 'pronamic_cookie_blocker_demo_subtitle' );
 		register_setting( 'pronamic_cookie_options', 'pronamic_cookie_blocker_demo_image' );
 		register_setting( 'pronamic_cookie_options', 'pronamic_cookie_blocker_demo_text' );
-		register_setting( 'pronamic_cookie_options', 'pronamic_cookie_blocker_demo_text' );
-		register_setting( 'pronamic_cookie_options', 'pronamic_cookie_blocker_demo_link', array( $this, 'verifiy_url' ) );
+		register_setting( 'pronamic_cookie_options', 'pronamic_cookie_blocker_demo_demo_text' );
+		register_setting( 'pronamic_cookie_options', 'pronamic_cookie_blocker_demo_demo_link', array( $this, 'verifiy_url' ) );
 		register_setting( 'pronamic_cookie_options', 'pronamic_cookie_blocker_demo_buy_text' );
 		register_setting( 'pronamic_cookie_options', 'pronamic_cookie_blocker_demo_buy_link', array( $this, 'verifiy_url' ) );
 		register_setting( 'pronamic_cookie_options', 'pronamic_cookie_blocker_demo_banner_color' );
