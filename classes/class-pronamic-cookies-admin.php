@@ -5,6 +5,11 @@ class Pronamic_Cookies_Admin {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'plugins_loaded', array( $this, 'load_defaults' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'scripts' ) );
+	}
+	public function scripts() {
+		wp_register_script( 'pronamic_cookie_admin_js', plugins_url( 'assets/pronamic-cookie-law-admin.js', PRONAMIC_CL_FILE ), array( 'jquery', 'wp-color-picker' ) );
+		wp_enqueue_script( 'pronamic_cookie_admin_js' );
 	}
 
 	public function admin_menu() {
