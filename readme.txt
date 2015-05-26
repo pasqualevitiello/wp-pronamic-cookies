@@ -23,6 +23,10 @@ A background image, color and text are modifiable from the settings.
 1.	Upload 'wp-pronamic-cookies-demo' to the '/wp-content/plugins/' directory,
 2.	Activate the plugin through the 'Plugins' menu in WordPress.
 
+== Cache plugins compatibility ==
+
+To make wotk this plugin with caching plugins, you may need to configure them correctly. The main problem is with page cache. For instance, to make it work
+with W3 Total Cache go to Page Cache -> Rejected cookies and add there the name of the cookie used by this plugin (in my case "cookie_notice_accepted").
 
 == Contribute ==
 
