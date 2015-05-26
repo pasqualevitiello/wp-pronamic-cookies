@@ -606,7 +606,7 @@
                     </footer>
                 </div>
             </div>
-            <dv class="clearfix"></dv>
+            <div class="clearfix"></div>
         </div>
 
         <div id="left"></div>
