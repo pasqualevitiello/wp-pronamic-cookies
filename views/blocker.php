@@ -597,7 +597,7 @@
                     <footer>
                         <div class="row">
                             <div class="col-6">
-                                <a class="button demo jBlockerAcceptExternal" href="<?php echo $demo_link;?>"><?php echo $demo_text;?></a>
+                                <a class="button demo jBlockerAcceptReload" href="<?php echo $demo_link;?>"><?php echo $demo_text;?></a>
                                 </div>
                             <div class="col-6">
                                 <a class="button purchase jBlockerAcceptExternal" href="<?php echo $buy_link;?>"><?php echo $buy_text;?></a>

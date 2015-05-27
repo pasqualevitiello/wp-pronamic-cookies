@@ -3,15 +3,15 @@ var Pronamic_Cookies = {
         config: {},
         ready: function() {
             Pronamic_Cookies.blocker.config.dom = {
-                'button': jQuery('.jBlockerAcceptReload'),
-                'external': jQuery('.jBlockerAcceptExternal')
+                'reload': jQuery('.jBlockerAcceptReload'),
+                'ext': jQuery('.jBlockerAcceptExt')
             };
 
             Pronamic_Cookies.blocker.binds();
         },
         binds: function() {
-            Pronamic_Cookies.blocker.config.dom.button.click(Pronamic_Cookies.blocker.set_and_reload);
-            Pronamic_Cookies.blocker.config.dom.external.click(Pronamic_Cookies.blocker.set_and_go_elsewhere);
+            Pronamic_Cookies.blocker.config.dom.reload.click(Pronamic_Cookies.blocker.set_and_reload);
+            Pronamic_Cookies.blocker.config.dom.ext.click(Pronamic_Cookies.blocker.set_and_go_elsewhere);
         },
         set_and_reload: function(e) {
             e.preventDefault();
